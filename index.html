@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyeux Anniversaire Serena | Mon Amour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Séréna | Mon Récit Interactif</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link
@@ -12,149 +12,106 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="mobile-narrative">
+
+    <canvas id="heart-canvas"></canvas>
 
     <audio id="bg-music" loop>
         <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030e.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="music-control">🎵</button>
+    <div id="narrative-container">
+        <!-- Slide 1: Hero -->
+        <section class="slide active" id="slide-hero">
+            <div class="glass-panel">
+                <h1>Bon Anniv', Serena.</h1>
+                <p>On m'a dit qu'il fallait faire un truc spécial.</p>
+                <p>J'avais la flemme d'écrire un long poème que je perdrais...</p>
+                <button class="next-btn">Commencer le récit ↓</button>
+            </div>
+        </section>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content fade-in-up">
-            <h1>Bon Anniv', Serena.</h1>
-            <p>On m'a dit qu'il fallait faire un truc spécial. J'avais la flemme d'écrire un long poème que je perdrais,
-                alors j'ai posé ça ici.</p>
-
-            <div class="counter-container">
-                <div class="counter-box glass-panel">
-                    <span id="days" class="counter-number">0</span>
-                    <span class="counter-label">Jours</span>
+        <!-- Slide 2: Timeline -->
+        <section class="slide" id="slide-counter">
+            <div class="glass-panel text-center">
+                <h2>Le Temps qui file...</h2>
+                <div class="counter-container">
+                    <div class="counter-box">
+                        <span id="days" class="counter-number">0</span>
+                        <span class="counter-label">Jours</span>
+                    </div>
+                    <div class="counter-box">
+                        <span id="hours" class="counter-number">0</span>
+                        <span class="counter-label">Heures</span>
+                    </div>
                 </div>
-                <div class="counter-box glass-panel">
-                    <span id="hours" class="counter-number">0</span>
-                    <span class="counter-label">Heures</span>
+                <p>Depuis ce 10 Septembre 2025 où tout a changé.</p>
+                <button class="next-btn">Continuer</button>
+            </div>
+        </section>
+
+        <!-- Slide 3: Meeting 2022 -->
+        <section class="slide" id="slide-2022">
+            <div class="glass-panel">
+                <h2>T'en souviens-tu ?</h2>
+                <p>On remonte en 2022. La classe de Première.</p>
+                <p>T'étais là, j'étais là. On se connaissait déjà, mais qui aurait cru qu'on finirait ici ?</p>
+                <button class="next-btn">Et puis...</button>
+            </div>
+        </section>
+
+        <!-- Slide 4: University 2025 -->
+        <section class="slide" id="slide-2025">
+            <div class="glass-panel">
+                <h2>L'Officialisation</h2>
+                <p>Septembre 2025. Deuxième année d'université.</p>
+                <p>On a décidé que "nous", c'était mieux que "toi" et "moi".</p>
+                <div class="img-container">
+                    <img src="images/IMG-20260114-WA0266.jpg" alt="Nous">
                 </div>
-                <div class="counter-box glass-panel">
-                    <span id="minutes" class="counter-number">0</span>
-                    <span class="counter-label">Min</span>
-                </div>
-                <div class="counter-box glass-panel">
-                    <span id="seconds" class="counter-number">0</span>
-                    <span class="counter-label">Sec</span>
-                </div>
+                <button class="next-btn">Pourquoi toi ?</button>
             </div>
-            <p style="margin-top: 20px; font-style: italic; opacity: 0.8;">C'est le temps exact depuis ce 10 Septembre
-                2025 où tout a changé.</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- La Genèse -->
-    <section id="about">
-        <div class="content-wrapper glass-panel fade-in-up" style="max-width: 800px; padding: 40px;">
-            <h2>Le début de l'histoire (ou presque)</h2>
-            <p>En vrai, ça remonte à plus loin. 2022, la classe de Première. T'étais là, j'étais là. On se connaissait
-                déjà, mais qui aurait cru qu'on finirait ici ? C'est ça la magie du truc.</p>
-        </div>
-    </section>
-
-    <!-- L'Officialisation -->
-    <section id="meeting" style="background: white;">
-        <div class="content-wrapper fade-in-up" style="text-align: center;">
-            <h2>Le 10 Septembre 2025</h2>
-            <p style="max-width: 600px; margin: 0 auto;">C'est là que ça devient sérieux. Deuxième année d'université,
-                les cours, le stress... et puis nous. On a décidé que "nous", c'était mieux que "toi" et "moi"
-                séparément. Meilleure décision de ma vie.</p>
-            <div
-                style="margin-top: 40px; border-radius: 20px; overflow: hidden; max-width: 500px; margin-left: auto; margin-right: auto;">
-                <img src="images/IMG-20260114-WA0266.jpg" alt="Nous" style="width: 100%; display: block;">
+        <!-- Slide 5: Reasons -->
+        <section class="slide" id="slide-reasons">
+            <div class="glass-panel">
+                <h2>Pourquoi t'es incroyable</h2>
+                <ul class="narrative-list">
+                    <li>T'es ma meilleure amie avant tout.</li>
+                    <li>Ton rire est mon bruit préféré.</li>
+                    <li>Tu m'équilibres (et c'est pas facile).</li>
+                    <li>T'es juste... Serena.</li>
+                </ul>
+                <button class="next-btn">Presque fini...</button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- La Chronologie de la Flemme -->
-    <section id="timeline">
-        <h2 class="fade-in-up">Les étapes clés</h2>
-        <div class="timeline-container fade-in-up" style="max-width: 800px; margin-top: 40px;">
-            <div class="timeline-item glass-panel" style="margin-bottom: 20px; padding: 20px;">
-                <h3>2022 : La Rencontre</h3>
-                <p>Classe de Première. On se croise, on se parle un peu. Les prémices de quelque chose de grand, sans
-                    qu'on le sache vraiment.</p>
+        <!-- Slide 6: Final Message -->
+        <section class="slide" id="slide-final">
+            <div class="glass-panel text-center">
+                <h2>Bon Anniversaire Charbelle</h2>
+                <p>Que cette année soit magnifique, comme ton cœur.</p>
+                <button id="gift-btn">Ouvrir ton cadeau 🎁</button>
             </div>
-            <div class="timeline-item glass-panel" style="margin-bottom: 20px; padding: 20px;">
-                <h3>10 Septembre 2025 : Le "Oui"</h3>
-                <p>Ma deuxième année d'université. Le moment où tout s'aligne. C'est le début officiel de notre aventure
-                    à deux.</p>
+        </section>
+
+        <!-- Slide 7: Secret -->
+        <section class="slide" id="slide-secret">
+            <div class="glass-panel highlight">
+                <h2>Mon Secret</h2>
+                <p class="poetic">
+                    "Si je devais revivre mille vies, je choisirais de te rencontrer mille fois, au même endroit, à la
+                    même heure, pour retomber amoureux de toi, encore et encore."
+                </p>
+                <p>Je t'aime. ♡</p>
             </div>
-            <div class="timeline-item glass-panel" style="margin-bottom: 20px; padding: 20px;">
-                <h3>Aujourd'hui : Ton Jour</h3>
-                <p>C'est ton anniversaire, Serena (Charbelle). T'es plus qu'une copine, t'es mon évidence. Toujours
-                    aussi belle, toujours aussi toi.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Pourquoi t'es incroyable -->
-    <section id="reasons" style="background: #efebf5;">
-        <div class="content-wrapper fade-in-up" style="text-align: center;">
-            <h2>Pourquoi t'es là (en quelques mots)</h2>
-            <p style="margin-bottom: 30px;">J'allais faire une liste de 100 raisons, mais la flemme... alors en voici
-                l'essentiel :</p>
-            <ul
-                style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <li class="glass-panel" style="padding: 20px;">T'es ma meilleure amie avant tout.</li>
-                <li class="glass-panel" style="padding: 20px;">Ton rire est mon bruit préféré.</li>
-                <li class="glass-panel" style="padding: 20px;">Tu m'équilibres (et c'est pas facile).</li>
-                <li class="glass-panel" style="padding: 20px;">T'es juste... Serena.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Galerie -->
-    <section id="gallery">
-        <h2 class="fade-in-up" style="margin-bottom: 40px;">Nos Moments en Images</h2>
-        <div class="gallery-grid fade-in-up">
-            <div class="gallery-item"><img src="images/IMG-20260108-WA0073.jpg" alt="Serena"></div>
-            <div class="gallery-item"><img src="images/IMG-20260108-WA0082.jpg" alt="Serena"></div>
-            <div class="gallery-item"><img src="images/IMG-20260114-WA0114.jpg" alt="Serena"></div>
-            <div class="gallery-item"><img src="images/IMG-20260114-WA0265.jpg" alt="Serena"></div>
-            <div class="gallery-item"><img src="images/IMG-20260114-WA0300.jpg" alt="Serena"></div>
-            <div class="gallery-item"><img src="images/IMG-20260126-WA0004.jpg" alt="Serena"></div>
-        </div>
-    </section>
-
-    <!-- Message Final -->
-    <section id="final">
-        <div class="content-wrapper fade-in-up" style="text-align: center;">
-            <h2>Bon Anniversaire Serena</h2>
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">Que cette année soit à l'image de ton
-                cœur : magnifique, remplie de joie et de succès. Je serai là pour célébrer chaque réussite à tes côtés.
-            </p>
-
-            <button id="secret-trigger" class="glass-panel"
-                style="padding: 15px 30px; margin-top: 30px; cursor: pointer; border: none; font-weight: bold; color: var(--primary-color);">Cliquer
-                pour une surprise...</button>
-        </div>
-    </section>
-
-    <!-- Secret Section -->
-    <section id="secret-content"
-        style="display: none; background: linear-gradient(to bottom, #f8f6fb, #7d52a8); color: white;">
-        <div class="content-wrapper fade-in-up" style="text-align: center;">
-            <h2 style="color: white;">Mon Secret Pour Toi</h2>
-            <p
-                style="font-size: 1.5rem; max-width: 700px; margin: 30px auto; font-family: var(--font-heading); font-style: italic;">
-                "Si je devais revivre mille vies, je choisirais de te rencontrer mille fois, au même endroit, à la même
-                heure, pour retomber amoureux de toi, encore et encore. Tu es mon évidence, Charbelle."
-            </p>
-            <p>♡</p>
-        </div>
-    </section>
-
-    <footer style="padding: 40px; text-align: center; opacity: 0.6; font-size: 0.8rem;">
-        Fait avec tout mon amour pour Serena • 2026
-    </footer>
+    <div class="controls">
+        <button id="music-toggle" class="glass-panel">🎵</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
