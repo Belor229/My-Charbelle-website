@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Séréna | Mon Récit Interactif</title>
+    <title>Séréna | Notre Histoire</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link
@@ -16,95 +16,196 @@
 
     <canvas id="heart-canvas"></canvas>
 
+    <!-- Romantic English Music -->
     <audio id="bg-music" loop>
-        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030e.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <!-- Alternative reliable source if needed -->
     </audio>
 
     <div id="narrative-container">
-        <!-- Slide 1: Hero -->
-        <section class="slide active" id="slide-hero">
+        <!-- Slide 1: Welcome -->
+        <section class="slide active" id="slide-welcome">
             <div class="glass-panel">
-                <h1>Bon Anniv', Serena.</h1>
-                <p>On m'a dit qu'il fallait faire un truc spécial.</p>
-                <p>J'avais la flemme d'écrire un long poème que je perdrais...</p>
-                <button class="next-btn">Commencer le récit ↓</button>
+                <h1 class="reveal-text">Bon Anniv', Serena.</h1>
+                <p class="reveal-text delay-1">On m'a dit qu'il fallait faire un truc spécial.</p>
+                <p class="reveal-text delay-2">J'avais la flemme d'écrire un long poème que je perdrais, alors j'ai posé
+                    mes émotions ici.</p>
+                <button class="next-btn">Ouvrir mon cœur ↓</button>
             </div>
         </section>
 
-        <!-- Slide 2: Timeline -->
-        <section class="slide" id="slide-counter">
-            <div class="glass-panel text-center">
-                <h2>Le Temps qui file...</h2>
-                <div class="counter-container">
-                    <div class="counter-box">
-                        <span id="days" class="counter-number">0</span>
-                        <span class="counter-label">Jours</span>
-                    </div>
-                    <div class="counter-box">
-                        <span id="hours" class="counter-number">0</span>
-                        <span class="counter-label">Heures</span>
-                    </div>
+        <!-- Slide 2: Qui est Serena -->
+        <section class="slide">
+            <div class="glass-panel">
+                <h2 class="reveal-text">Qui est Serena ?</h2>
+                <p class="reveal-text delay-1">Tu es une personne rare, Charbelle.</p>
+                <p class="reveal-text delay-2">Romantique, douce et profondément sensible, tu possèdes cette élégance
+                    naturelle qu’on ne peut pas apprendre.</p>
+                <div class="img-container reveal-text delay-3">
+                    <img src="images/IMG-20260126-WA0004.jpg" alt="Charbelle">
                 </div>
-                <p>Depuis ce 10 Septembre 2025 où tout a changé.</p>
                 <button class="next-btn">Continuer</button>
             </div>
         </section>
 
-        <!-- Slide 3: Meeting 2022 -->
-        <section class="slide" id="slide-2022">
+        <!-- Slide 3: Qui est Serena (Suite) -->
+        <section class="slide">
             <div class="glass-panel">
-                <h2>T'en souviens-tu ?</h2>
-                <p>On remonte en 2022. La classe de Première.</p>
-                <p>T'étais là, j'étais là. On se connaissait déjà, mais qui aurait cru qu'on finirait ici ?</p>
-                <button class="next-btn">Et puis...</button>
+                <p class="reveal-text">Ton sourire est probablement ta plus grande force.</p>
+                <p class="reveal-text delay-1">Même face aux difficultés, tu continues d’illuminer le monde autour de
+                    toi.</p>
+                <p class="reveal-text delay-2">Ambitieuse, charismatique, tu marques les esprits sans effort.</p>
+                <button class="next-btn">Mais surtout...</button>
             </div>
         </section>
 
-        <!-- Slide 4: University 2025 -->
-        <section class="slide" id="slide-2025">
+        <!-- Slide 4: Qui est Serena (Fin) -->
+        <section class="slide">
             <div class="glass-panel">
-                <h2>L'Officialisation</h2>
-                <p>Septembre 2025. Deuxième année d'université.</p>
-                <p>On a décidé que "nous", c'était mieux que "toi" et "moi".</p>
-                <div class="img-container">
-                    <img src="images/IMG-20260114-WA0266.jpg" alt="Nous">
+                <p class="reveal-text">Au-delà de tout cela, tu restes simplement toi-même.</p>
+                <p class="reveal-text delay-1">Sincère, vraie, et incroyablement précieuse à mes yeux.</p>
+                <div class="img-container reveal-text delay-2">
+                    <img src="images/IMG-20260114-WA0114.jpg" alt="Toi">
                 </div>
-                <button class="next-btn">Pourquoi toi ?</button>
+                <button class="next-btn">Notre rencontre</button>
             </div>
         </section>
 
-        <!-- Slide 5: Reasons -->
-        <section class="slide" id="slide-reasons">
+        <!-- Slide 5: Notre rencontre (Tori) -->
+        <section class="slide">
             <div class="glass-panel">
-                <h2>Pourquoi t'es incroyable</h2>
-                <ul class="narrative-list">
-                    <li>T'es ma meilleure amie avant tout.</li>
-                    <li>Ton rire est mon bruit préféré.</li>
-                    <li>Tu m'équilibres (et c'est pas facile).</li>
-                    <li>T'es juste... Serena.</li>
+                <h2 class="reveal-text">Tori Agouako</h2>
+                <p class="reveal-text delay-1">Tout a commencé là-bas, au CEG Tori Agouako, à Tori-Bossito.</p>
+                <p class="reveal-text delay-2">C'était le premier jour de la rentrée. Un moment ordinaire...</p>
+                <p class="reveal-text delay-3">...jusqu'à ce que Frédéric nous présente.</p>
+                <button class="next-btn">Ce jour-là...</button>
+            </div>
+        </section>
+
+        <!-- Slide 6: Le Coup de Foudre -->
+        <section class="slide">
+            <div class="glass-panel">
+                <p class="reveal-text">Quelque chose s'est produit sans prévenir : un coup de foudre silencieux.</p>
+                <p class="reveal-text delay-1">Dans cette classe de première, j'ai compris que tu serais différente des
+                    autres.</p>
+                <p class="reveal-text delay-2">Tu étais la bonne personne, c'était une certitude.</p>
+                <button class="next-btn">Notre histoire</button>
+            </div>
+        </section>
+
+        <!-- Slide 7: 10 Septembre 2025 -->
+        <section class="slide">
+            <div class="glass-panel">
+                <h2 class="reveal-text">Le Début Officiel</h2>
+                <p class="reveal-text delay-1">10 Septembre 2025.</p>
+                <p class="reveal-text delay-2">Le jour où notre histoire est devenue réelle.</p>
+                <div class="counter-container reveal-text delay-3">
+                    <div class="counter-box">
+                        <span id="days" class="counter-number">0</span>
+                        <span class="counter-label">Jours</span>
+                    </div>
+                </div>
+                <button class="next-btn">Nos moments</button>
+            </div>
+        </section>
+
+        <!-- Slide 8: Dadju & Rires -->
+        <section class="slide">
+            <div class="glass-panel">
+                <p class="reveal-text">Nos interprétations musicales de Dadju...</p>
+                <p class="reveal-text delay-1">Deux voix, beaucoup de rires, et une complicité qui n'appartient qu'à
+                    nous.</p>
+                <div class="img-container reveal-text delay-2">
+                    <img src="images/IMG-20260114-WA0300.jpg" alt="Musique">
+                </div>
+                <button class="next-btn">Le premier...</button>
+            </div>
+        </section>
+
+        <!-- Slide 9: Premier Baiser & BAC -->
+        <section class="slide">
+            <div class="glass-panel">
+                <p class="reveal-text">Notre premier baiser — Un instant suspendu dans le temps.</p>
+                <p class="reveal-text delay-1">Et après le Baccalauréat...</p>
+                <p class="reveal-text delay-2">Une épreuve qui a montré la valeur réelle de notre lien, plus fort que
+                    tout.</p>
+                <button class="next-btn">Le voyage</button>
+            </div>
+        </section>
+
+        <!-- Slide 10: 1er Janvier & Kétou -->
+        <section class="slide">
+            <div class="glass-panel">
+                <p class="reveal-text">Le 1er Janvier — Ta visite pour commencer l'année dans tes bras.</p>
+                <p class="reveal-text delay-1">Puis ton voyage à Kétou...</p>
+                <p class="reveal-text delay-2">La preuve que l'amour trouve toujours un chemin, peu importe la distance.
+                </p>
+                <div class="img-container reveal-text delay-3">
+                    <img src="images/IMG-20260114-WA0266.jpg" alt="Kétou">
+                </div>
+                <button class="next-btn">Pourquoi je t'aime</button>
+            </div>
+        </section>
+
+        <!-- Slide 11: Pourquoi je t'aime -->
+        <section class="slide">
+            <div class="glass-panel">
+                <h2 class="reveal-text">Pourquoi toi ?</h2>
+                <ul class="narrative-list reveal-text delay-1">
+                    <li>Pour ton ambition et ta force intérieure.</li>
+                    <li>Pour ton charisme naturel qui m'impressionne.</li>
+                    <li>Pour ton sourire exceptionnel qui illumine ma vie.</li>
+                    <li>Pour ta façon unique de danser...</li>
                 </ul>
+                <button class="next-btn">Et surtout...</button>
+            </div>
+        </section>
+
+        <!-- Slide 12: La Paix -->
+        <section class="slide">
+            <div class="glass-panel">
+                <p class="reveal-text">Surtout... je t'aime pour la paix que je ressens simplement quand tu es là.</p>
+                <p class="reveal-text delay-1">Chaque photo raconte un moment simple devenu précieux.</p>
+                <div class="img-container reveal-text delay-2">
+                    <img src="images/IMG-20260108-WA0082.jpg" alt="Souvenir">
+                </div>
                 <button class="next-btn">Presque fini...</button>
             </div>
         </section>
 
-        <!-- Slide 6: Final Message -->
-        <section class="slide" id="slide-final">
-            <div class="glass-panel text-center">
-                <h2>Bon Anniversaire Charbelle</h2>
-                <p>Que cette année soit magnifique, comme ton cœur.</p>
-                <button id="gift-btn">Ouvrir ton cadeau 🎁</button>
+        <!-- Slide 13: Message Final -->
+        <section class="slide">
+            <div class="glass-panel">
+                <h2 class="reveal-text">Joyeux anniversaire</h2>
+                <p class="reveal-text delay-1">Six mois peuvent sembler courts, mais ils ont suffi pour comprendre ta
+                    valeur immense.</p>
+                <p class="reveal-text delay-2">Je ne promets pas une vie parfaite.</p>
+                <p class="reveal-text delay-3">Je promets de me donner au maximum pour te voir heureuse demain.</p>
+                <button class="next-btn">Grandir ensemble</button>
             </div>
         </section>
 
-        <!-- Slide 7: Secret -->
+        <!-- Slide 14: L'Engagement -->
+        <section class="slide">
+            <div class="glass-panel">
+                <p class="reveal-text">Grandir avec toi. Apprendre avec toi. Construire avec toi.</p>
+                <p class="reveal-text delay-1">Merci pour ton amour, ta patience et ta lumière.</p>
+                <p class="reveal-text delay-2">Tu comptes profondément pour moi.</p>
+                <p class="reveal-text delay-3">— Avec tout mon cœur</p>
+                <button id="gift-btn">Cadeau final 🎁</button>
+            </div>
+        </section>
+
+        <!-- Slide 15: Secret -->
         <section class="slide" id="slide-secret">
             <div class="glass-panel highlight">
-                <h2>Mon Secret</h2>
-                <p class="poetic">
-                    "Si je devais revivre mille vies, je choisirais de te rencontrer mille fois, au même endroit, à la
-                    même heure, pour retomber amoureux de toi, encore et encore."
+                <h2 class="reveal-text">Mon ultime vérité</h2>
+                <p class="poetic reveal-text delay-1">
+                    "Si tu lis ceci, c’est que tu es arrivée jusqu’au bout… exactement comme dans notre histoire."
                 </p>
-                <p>Je t'aime. ♡</p>
+                <p class="reveal-text delay-2">Je choisirais encore de te rencontrer, encore et encore, même en
+                    recommençant mille fois ma vie.</p>
+                <p>Je t'aime infiniment. ♡</p>
             </div>
         </section>
     </div>

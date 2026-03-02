@@ -1,4 +1,4 @@
-// Serena's Mobile Interactive Narrative Logic
+// Serena's Final Narrative Masterpiece Logic
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -11,18 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function goToSlide(index) {
         if (index >= slides.length) return;
 
+        // Handle outgoing slide
         slides[currentSlide].classList.remove('active');
         slides[currentSlide].classList.add('prev');
 
+        // Handle incoming slide
         currentSlide = index;
+        slides[currentSlide].classList.remove('prev');
         slides[currentSlide].classList.add('active');
+
+        // Scroll to top of the new slide (important for mobile)
+        slides[currentSlide].scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    nextBtns.forEach((btn, idx) => {
+    nextBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
-            // Play music on first click if not playing
             if (currentSlide === 0) {
-                tryStartMusic();
+                toggleMusic(true);
             }
             goToSlide(currentSlide + 1);
         });
@@ -38,14 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
         const diff = now - startDate;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
         const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
         if (daysEl) daysEl.innerText = days;
-        if (hoursEl) hoursEl.innerText = hours;
     }
-    setInterval(updateCounter, 1000 * 60); // Update every minute is enough for h/d
     updateCounter();
 
     // 3. Heart Animation Engine (Canvas)
@@ -70,15 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
             reset() {
                 this.x = Math.random() * width;
                 this.y = height + Math.random() * 100;
-                this.size = Math.random() * 15 + 5;
-                this.speed = Math.random() * 2 + 1;
-                this.opacity = Math.random() * 0.5 + 0.3;
+                this.size = Math.random() * 12 + 8;
+                this.speed = Math.random() * 1.5 + 0.5;
+                this.opacity = Math.random() * 0.4 + 0.2;
                 this.swing = Math.random() * 2;
                 this.swingStep = 0;
             }
             update() {
                 this.y -= this.speed;
-                this.swingStep += 0.02;
+                this.swingStep += 0.01;
                 this.x += Math.sin(this.swingStep) * this.swing;
                 if (this.y < -50) this.reset();
             }
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        for (let i = 0; i < 20; i++) hearts.push(new Heart());
+        for (let i = 0; i < 15; i++) hearts.push(new Heart());
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
@@ -102,33 +103,33 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
-    // 4. Music Logic
+    // 4. Robust Music Logic
     const music = document.getElementById('bg-music');
     const musicBtn = document.getElementById('music-toggle');
-    let musicPlaying = false;
+    let isMusicPlaying = false;
 
-    function tryStartMusic() {
-        if (!musicPlaying) {
+    function toggleMusic(forcePlay = false) {
+        if (!isMusicPlaying || forcePlay) {
             music.play().then(() => {
-                musicPlaying = true;
+                isMusicPlaying = true;
+                musicBtn.classList.add('playing');
                 musicBtn.innerText = '⏸️';
-            }).catch(() => {
-                console.log("Music auto-play blocked");
-            });
+            }).catch(e => console.log("Audio blocked by browser, waiting for more interaction."));
+        } else {
+            music.pause();
+            isMusicPlaying = false;
+            musicBtn.classList.remove('playing');
+            musicBtn.innerText = '🎵';
         }
     }
 
     if (musicBtn) {
         musicBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (musicPlaying) {
-                music.pause();
-                musicBtn.innerText = '🎵';
-            } else {
-                music.play();
-                musicBtn.innerText = '⏸️';
-            }
-            musicPlaying = !musicPlaying;
+            toggleMusic();
         });
     }
+
+    // Initial check for counter in case it's on a later slide
+    updateCounter();
 });

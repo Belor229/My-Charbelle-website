@@ -40,6 +40,34 @@ body {
     opacity: 0.6;
 }
 
+/* Slow Reveal Text Animations */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.active .reveal-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.5s;
+}
+
+.delay-2 {
+    transition-delay: 1.2s;
+}
+
+.delay-3 {
+    transition-delay: 2s;
+}
+
+.delay-4 {
+    transition-delay: 2.8s;
+}
+
 #narrative-container {
     position: relative;
     width: 100%;
@@ -61,6 +89,9 @@ body {
     visibility: hidden;
     transform: translateY(50px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    /* Allow scrolling within slide if content is long */
+    -webkit-overflow-scrolling: touch;
 }
 
 .slide.active {
@@ -75,6 +106,8 @@ body {
 }
 
 .glass-panel {
+    margin-top: 20px;
+    margin-bottom: 20px;
     background: var(--glass-white);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
