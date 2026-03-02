@@ -95,8 +95,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    padding-bottom: 80px;
-    /* Extra padding at bottom for mobile controls */
+    padding-bottom: 120px;
+    /* Extra padding at bottom for mobile controls and browser bars */
     opacity: 0;
     visibility: hidden;
     transform: translateY(50px);
@@ -128,6 +128,10 @@ body {
     padding: 50px 35px;
     width: 100%;
     max-width: 380px;
+    max-height: 75vh;
+    /* Limit height on mobile */
+    overflow-y: auto;
+    /* Enable internal scrolling */
     text-align: center;
     box-shadow:
         0 25px 50px rgba(109, 89, 122, 0.15),

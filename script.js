@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isMusicPlaying || forcePlay) {
             // Set start time to 24 seconds on first play
             if (music.currentTime === 0) {
-                music.currentTime = 24.0;
+                music.currentTime = 20.0;
             }
             music.play().then(() => {
                 isMusicPlaying = true;
