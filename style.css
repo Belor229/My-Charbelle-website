@@ -1,14 +1,22 @@
 /* Mobile Narrative Design System */
 
 :root {
-    --primary-color: #7d52a8;
-    --secondary-color: #b39cd0;
-    --accent-color: #ff9a9e;
+    --primary-color: #d4a373;
+    /* Gold/Champagne */
+    --secondary-color: #faedcd;
+    /* Cream */
+    --accent-color: #e5989b;
+    /* Muted Rose */
+    --deep-rose: #6d597a;
+    /* Deep Purple/Rose */
     --text-color: #2D1E3E;
-    --bg-color: #fcfaff;
-    --glass-white: rgba(255, 255, 255, 0.7);
+    --bg-color: #fefae0;
+    /* Soft Warm White */
+    --glass-white: rgba(255, 255, 255, 0.45);
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Poppins', sans-serif;
+    --gold-gradient: linear-gradient(135deg, #d4a373 0%, #faedcd 100%);
+    --rose-gradient: linear-gradient(135deg, #e5989b 0%, #b5838d 100%);
 }
 
 * {
@@ -109,15 +117,22 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     background: var(--glass-white);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 30px;
-    padding: 40px 30px;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    padding: 50px 35px;
     width: 100%;
-    max-width: 350px;
+    max-width: 380px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(125, 82, 168, 0.1);
+    box-shadow:
+        0 25px 50px rgba(109, 89, 122, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-panel:hover {
+    transform: scale(1.02);
 }
 
 h1 {
@@ -142,15 +157,30 @@ p {
 
 .next-btn,
 #gift-btn {
-    background: var(--primary-color);
+    background: var(--rose-gradient);
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 18px 35px;
     border-radius: 50px;
     font-weight: 600;
-    margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(125, 82, 168, 0.3);
+    font-size: 1.1rem;
+    margin-top: 25px;
+    box-shadow: 0 10px 25px rgba(229, 152, 155, 0.4);
     cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.next-btn:hover,
+#gift-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(229, 152, 155, 0.5);
+    filter: brightness(1.1);
+}
+
+.next-btn:active,
+#gift-btn:active {
+    transform: translateY(1px);
 }
 
 .img-container {

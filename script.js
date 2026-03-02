@@ -27,14 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
             if (currentSlide === 0) {
+                // Emotional transition starts music
                 toggleMusic(true);
+                document.body.classList.add('story-started');
             }
             goToSlide(currentSlide + 1);
         });
     });
 
     if (giftBtn) {
-        giftBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+        giftBtn.addEventListener('click', () => {
+            const password = prompt("Notre mots de passe :");
+            if (password === "100925") {
+                goToSlide(currentSlide + 1);
+            } else {
+                alert("Ce n'est pas le bon mot de passe... Petit indice : notre date spéciale.");
+            }
+        });
     }
 
     // 2. Counter Logic (Since 2025-09-10)
@@ -71,10 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
             reset() {
                 this.x = Math.random() * width;
                 this.y = height + Math.random() * 100;
-                this.size = Math.random() * 12 + 8;
-                this.speed = Math.random() * 1.5 + 0.5;
-                this.opacity = Math.random() * 0.4 + 0.2;
-                this.swing = Math.random() * 2;
+                this.size = Math.random() * 15 + 10;
+                this.speed = Math.random() * 1.8 + 0.5;
+                this.opacity = Math.random() * 0.5 + 0.3;
+                this.swing = Math.random() * 3;
                 this.swingStep = 0;
             }
             update() {
@@ -90,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        for (let i = 0; i < 15; i++) hearts.push(new Heart());
+        for (let i = 0; i < 25; i++) hearts.push(new Heart());
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
@@ -110,6 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleMusic(forcePlay = false) {
         if (!isMusicPlaying || forcePlay) {
+            // Set start time to 24 seconds on first play
+            if (music.currentTime === 0) {
+                music.currentTime = 24.0;
+            }
             music.play().then(() => {
                 isMusicPlaying = true;
                 musicBtn.classList.add('playing');
